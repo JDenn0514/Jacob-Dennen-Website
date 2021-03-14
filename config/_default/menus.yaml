@@ -7,10 +7,12 @@ main:
   - name: About Me
     url: '#about'
     weight: 10
-  - name: Posts
+  - name: Blog
     url: '#posts'
     weight: 20
   - name: Graphs
     url: '#graphs'
     weight: 30
+  - name: Resume
+    url: '#resume'
 
