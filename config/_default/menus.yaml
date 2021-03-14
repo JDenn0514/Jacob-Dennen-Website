@@ -15,4 +15,5 @@ main:
     weight: 30
   - name: Resume
     url: '#resume'
+    weight: 40
 
