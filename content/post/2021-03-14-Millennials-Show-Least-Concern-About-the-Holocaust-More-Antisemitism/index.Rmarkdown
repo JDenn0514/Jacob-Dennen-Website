@@ -2,7 +2,7 @@
 title: Millennials Show Least Concern About the Holocaust, More Antisemitism
 author: Jacob Dennen
 date: '2021-03-14'
-slug: hi-hugo
+slug: Millenials-Least-Concern
 categories: []
 tags: []
 subtitle: ''
