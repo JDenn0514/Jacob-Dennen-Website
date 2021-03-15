@@ -16,4 +16,7 @@ main:
   - name: Resume
     url: '/resume/'
     weight: 40
+  - name: Courses
+    url: courses/
+    weight: 50
 
