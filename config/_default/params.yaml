@@ -20,7 +20,7 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: test@example.org
+email: JDenn0514@gmail.com
 phone: 888 888 88 88
 address:
   street: 450 Serra Mall
@@ -59,7 +59,7 @@ contact_links:
 
 main_menu:
   enable: true
-  align: l
+  align: r
   show_logo: true
   show_language: false
   show_day_night: true
