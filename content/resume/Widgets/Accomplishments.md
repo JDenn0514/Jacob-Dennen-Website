@@ -27,10 +27,20 @@ item:
 - certificate_url: https://www.coursera.org
   date_end: ""
   date_start: "2018-10-01"
-  description: ""
+  description: 
   organization: Coursera
   organization_url: https://www.coursera.org
   title: Neural Networks and Deep Learning
+  url: ""
+- certificate_url: 
+  date_start: "2020-09-01"
+  description: "1. Conducted a year long, senior honors research thesis on antisemitic sentiment among the   American Left, comparing college students to the general public. Created experimental and cross-sectional survey questions to elicit implicit biases against Jews as well as overt antisemitic sentiment; analyzed responses using quantitative and qualitative methodologies. 
+  
+  2. Collaborated with teams to develop and implement the surveys, which received 1,870 responses nationally and 600 responses from Denison University students."
+  organization: Denison University- 
+          
+  organization_url: 
+  title: Undergraduate Researcher
   url: ""
 - certificate_url: https://www.edx.org
   date_end: ""
@@ -40,12 +50,4 @@ item:
   organization_url: https://www.edx.org
   title: Blockchain Fundamentals
   url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-- certificate_url: https://www.datacamp.com
-  date_end: "2017-12-21"
-  date_start: "2017-07-01"
-  description: ""
-  organization: DataCamp
-  organization_url: https://www.datacamp.com
-  title: 'Object-Oriented Programming in R: S3 and R6 Course'
-  url: ""
 ---
