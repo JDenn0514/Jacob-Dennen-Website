@@ -37,8 +37,8 @@ superuser: true
 title: Jacob Dennen
 ---
 
-I am a senior at Denison University studying Political Science. Currently, I am conducting a year-long senior research project with honors on antisemitism among the American Left. Furthermore, I am interested in continuing to research and study antisemitism as I believe that it is essential to understand it in order to fight it.
+Bachelor degree candidate translating research data and survey results into meaningful content. Passion for increasing accessibility of information to non-academic audiences and the general public. Natural leader and collaborative team player managing projects to completion. Research focus: perceptions of Jews/antisemitism.
 
-I am currently a captain on the Denison Men's Tennis Team. 
+
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
