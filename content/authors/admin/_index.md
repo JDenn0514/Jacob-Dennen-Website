@@ -1,6 +1,5 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My research interests include antisemitism, public opinion, and data visualization.
 education:
   courses:
   - course: B.A. Political Science
@@ -10,9 +9,9 @@ education:
 email: ""
 highlight_name: false
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Antisemitism
+- Public Opinion
+- Data Visualization
 organizations:
 - name: Denison University
   url: https://www.denison.edu/
@@ -41,4 +40,4 @@ Bachelor degree candidate translating research data and survey results into mean
 
 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/Dennen-Jacob-Resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
