@@ -17,7 +17,7 @@ image:
 projects: []
 ---
 
-According to a 2020 survey, 63% of Millennials and Gen Z did not know how many people died in the Holocaust, and 12% of Millennials had never even heard of the word “Holocaust” before. This survey demonstrates a worrying lack of knowledge of the Holocaust. As people’s knowledge of the Holocaust decreases, they likely aren’t aware of its severity and don’t understand the importance of continuing to discuss and educate about it. As a result, they may get annoyed when they regularly hear about it. 
+According to a 2020 [survey](http://www.claimscon.org/millennial-study/), 63% of Millennials and Gen Z did not know how many people died in the Holocaust, and 12% of Millennials had never even heard of the word “Holocaust” before. This survey demonstrates a worrying lack of knowledge of the Holocaust. As people’s knowledge of the Holocaust decreases, they likely aren’t aware of its severity and don’t understand the importance of continuing to discuss and educate about it. As a result, they may get annoyed when they regularly hear about it. 
         
 This made me wonder, how do different generations perceive the importance of the Holocaust? And has the importance of the Holocaust weakened as we move further away from it?
             
