@@ -21,19 +21,19 @@ twitter: ''
 # Contact (edit or remove options as required)
 
 email: JDenn0514@gmail.com
-phone: 888 888 88 88
-address:
-  street: 
-  city: 
-  region: 
-  postcode: 
-  country: 
-  country_code: 
-coordinates:
-  latitude: 
-  longitude: 
-directions: 
-office_hours:
+#phone: 888 888 88 88
+#address:
+#  street: 
+#  city: 
+#  region: 
+#  postcode: 
+#  country: 
+#  country_code: 
+#coordinates:
+#  latitude: 
+#  longitude: 
+#directions: 
+#office_hours:
   - 
   - 
 appointment_url:
