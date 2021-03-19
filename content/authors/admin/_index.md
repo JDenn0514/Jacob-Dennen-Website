@@ -1,5 +1,5 @@
 ---
-bio: My research interests include antisemitism, public opinion, and data visualization.
+bio: Jacob Dennen is a senior studying Political Science and conducting a year-long senior research project on antisemitism. Outside of school, he is most excited to start competing in his final season on the Men’s Tennis Team. Be sure to check out his twitter account as well.
 education:
   courses:
   - course: B.A. Political Science

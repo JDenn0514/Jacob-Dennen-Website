@@ -1,43 +1,21 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: Paul A. Djupe, Denison University, is an affiliated scholar with [PRRI](https://www.prri.org/), the series editor of [Religious Engagement in Democratic Politics](http://tupress.temple.edu/series/S-192) (Temple), and co-creator of [religioninpublic.blog](https://onetwentyseven.blog/) (check out his [posts](https://religioninpublic.blog/contributors/djupe/)). Further information about his work can be found at his [website](http://pauldjupe.com/) and on [Twitter](https://twitter.com/PaulDjupe).
+
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
-email: ""
-interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
-organizations:
-- name: Stanford University
-  url: ""
-role: Professor of Artificial Intelligence
-social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-- icon: github
-  icon_pack: fab
-  link: https://github.com/gcushen
+  - course: Ph.D. in Political Science
+    institution: Washington University in St. Louis
+    year: 1997
+  - course: M.A. in Political Science
+    institution: Washington University in St. Louis
+    year: 1995
+  - course: B.A. in Political Science and Philosophy
+    institution: Gustavus Adolphus College
+    year: 1993
+
+
+
 superuser: false
-title: 吳恩達
+title: Paul A. Djupe
 ---
 
-吳恩達 is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
