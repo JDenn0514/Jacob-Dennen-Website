@@ -1,6 +1,6 @@
 ---
 title: Ideological Tensions on Campus?
-author: R package build, Paul A. Djupe
+author: R package build
 date: '2021-03-18'
 slug: ideological-tensions-on-campus
 categories: []
@@ -43,3 +43,4 @@ But are all those Democrats all on the same ideological page? Let’s take a loo
 ![image4](image_4.png)
 
 So, even if there are a strong majority of Democrats on campus, it’s not like they are ideologically unified. While they express unified support for BLM and against Trump, for instance, they are not on the same page about other intra-party actors like Joe Biden. We’re not sure if this is enough to constitute the political diversity that we are rightly so concerned with experiencing at Denison. However, there are likely to be disagreements that can be had if they are framed in the right way. We suspect that they might involve tactics  –  even if many agree, for instance, that government-provided health coverage is the goal, should it be approached incrementally or all at once? Should the US quickly or gradually phase out the use of coal? If there had been a Democratic blowout in 2020, these issues would have risen to the fore  –  the questions that those in power can afford to debate. With a potentially divided Congress, the aims of the incoming administration will be much more subdued. 
+
