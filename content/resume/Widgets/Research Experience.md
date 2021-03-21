@@ -31,10 +31,11 @@ experience:
     date_start: '2020-09-01'
     date_end: ''
     description: |2-
-        * Conducted a year long, senior honors research thesis on antisemitic sentiment among the   American Left, comparing college students to the general public. Created experimental and cross-sectional survey questions to elicit implicit biases against Jews as well as overt antisemitic sentiment; analyzed responses using quantitative and qualitative methodologies.
+        * Conducted a year long, senior honors research thesis on antisemitic sentiment among the American Left, comparing college students to the general public. Created experimental and cross-sectional survey questions to elicit implicit biases against Jews as well as overt antisemitic sentiment; analyzed responses using quantitative and qualitative methodologies.
         * Collaborated with teams to develop and implement the surveys, which received 1,870 responses nationally and 600 responses from Denison University students.
-  - title: Undergraduate Researcher
-    company: Denison University
+        
+  - title: Research Assistant
+    company: Dr. Paul A Djupe, Denison University
     company_url: ''
     location: Ohio
     date_end: "2020-12-01"
