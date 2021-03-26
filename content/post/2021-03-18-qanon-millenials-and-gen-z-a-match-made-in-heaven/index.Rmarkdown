@@ -1,12 +1,15 @@
 ---
-title: QAnon + Millenials and Gen Z, A Match Made in Heaven?
-author: R package build
+title: "QAnon + Millenials and Gen Z, A Match Made in Heaven?"
+author: "R package build"
 date: '2021-03-18'
 slug: qanon-millenials-and-gen-z-a-match-made-in-heaven
 categories: []
 tags: []
 subtitle: ''
-summary: How do different generations view QAnon  –  the most significant source of misinformation of 2020? Which generations are most in agreement with QAnon and which are most in disagreement? Does the impact QAnon has on antisemitism differ for each generation?
+summary: How do different generations view QAnon  –  the most significant source of
+  misinformation of 2020? Which generations are most in agreement with QAnon and which
+  are most in disagreement? Does the impact QAnon has on antisemitism differ for each
+  generation?
 authors: []
 lastmod: '2021-03-18T08:06:51-04:00'
 featured: no
@@ -19,6 +22,123 @@ projects: []
 
 Note: This originally appeared on the blog [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)
 
+
+```{r, include=FALSE}
+#Loading the necessary packages
+library(rio)
+library(tidyverse)
+library(ggplot2)
+library(ggridges)
+library(ggsci)
+library(ggthemes)
+library(car)
+library(gridExtra)
+#install.packages("ggpubr")
+library(ggpubr)
+#install.packages("showtext")
+library(showtext)
+#install.packages("prediction")
+library(prediction)
+font_add_google("Merriweather", "M", regular.wt = 400)
+font_add_google("Josefin Sans", "JS", regular.wt = 400)
+font_add_google("EB Garamond", "G", regular.wt = 400)
+font_add_google("Raleway", "Rw", regular.wt = 400)
+font_add_google("Averia Sans Libre", "Ave", regular.wt = 400)
+font_add_google("Nova Round", "Nova", regular.wt = 400)
+font_add_google("Carrois Gothic", "CG", regular.wt=400)
+font_add_google("Jost", "Jost", regular.wt=400)
+showtext_opts(dpi = 300)
+showtext_auto(enable = TRUE)
+#install.packages("devtools")
+library(devtools)
+#install_github("ryanburge/socsci")
+library(socsci)
+#install.packages("paletteer")
+library(paletteer)
+#install.packages("jtools")
+library(jtools)
+#install.packages("interactions")
+library(interactions)
+#install.packages("patchwork")
+library(patchwork)
+#install.packages("psych")
+library(psych)
+#install.packages("MASS")
+library(MASS)
+#install.packages("ragg")
+library(ragg)
+#install.packages("systemfonts")
+library(systemfonts)
+#install.packages("gtools")
+library(gtools)
+library(margins)
+library(interactions)
+
+```
+
+```{r, include=FALSE}
+#Data import
+library(readr)
+O20_with_weights <- read_csv("~/Downloads/O20_with_weights.csv")
+
+O20 <- O20_with_weights
+
+O20 <- O20 %>% filter(gc==1)
+
+rm(O20_with_weights)
+
+
+```
+
+```{r, include=FALSE}
+#Making the generations (cohorts) variable
+O20 <- O20 %>% mutate(age=2020-q3_1,
+                      birthyr=q3_1)
+
+O20 <- O20 %>% mutate(cohorts = frcode(birthyr>= 1901 & birthyr <= 1924 ~ 'Greatest\nGeneration',
+                                       birthyr>= 1925 & birthyr <= 1945 ~ 'Silent\nGeneration',
+                                       birthyr>= 1946 & birthyr <= 1964 ~ 'Boomers',
+                                       birthyr>= 1965 & birthyr <= 1976 ~ 'Gen X',
+                                       birthyr>= 1977 & birthyr <= 1995 ~ 'Millennials',
+                                       birthyr>= 1996 & birthyr <= 2020 ~ 'Gen Z'))
+
+#Making QAnon variable
+O20 <- O20 %>% mutate(q38_10r=6-q38_10)
+O20 <- O20 %>% mutate(q38_10rc=car::recode(q38_10r, "1:3=0; 4:5=1")) 
+O20 <- O20 %>% mutate(q38_10lab=frcode(q38_10rc==0 ~ "Disagree",
+                                       q38_10rc==1 ~ "Agree"))
+
+
+
+
+```
+
+```{r, include=FALSE}
+#Making tropes variable
+O20 <- O20 %>%mutate(q107_1r=car::Recode(q107_1, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_2r=car::Recode(q107_2, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_3r=car::Recode(q107_3, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_4r=car::Recode(q107_4, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_5r=car::Recode(q107_5, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_6r=car::Recode(q107_6, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_7r=car::Recode(q107_7, "1=1; 2=0"))
+O20 <- O20 %>%mutate(q107_8r=car::Recode(q107_8, "1=1; 2=0"))
+
+O20 <- O20 %>% rowwise() %>% mutate(tropes=sum(q107_1r, 
+                                               q107_2r, 
+                                               q107_3r,
+                                               q107_4r, 
+                                               q107_5r, 
+                                               q107_6r, 
+                                               q107_7r, 
+                                               q107_8r, na.rm=TRUE)) %>% ungroup()
+O20 <- O20 %>% mutate(tropes_factor=as.factor(tropes))
+
+```
+
+
+
+
 “OK Boomer.” Every Gen Z’er or Millennial has heard of this phrase or has used it themselves. We know that it has come to represent how out of touch the Baby Boom generation is. While much of this comes from the idea that Boomers’ conservatism has influenced decisions that have jeopardized our futures (look at the climate change crisis and economic crisis), part of it also has to do with the impact that misinformation has on older generations. According to a [study](https://science.sciencemag.org/content/363/6425/374.full) from 2019, older people are more likely to both view and share fake news. In fact, [people over the age of 65 shared more fake news than any other age group and seven times as much as 18-29 year olds](https://advances.sciencemag.org/content/5/1/eaau4586). This has caused some people to ask the question bluntly put by Michael Hobbes of the Huffington Post: [what is the internet doing to Boomers’ brains](https://www.huffpost.com/entry/internet-baby-boomers-misinformation-social-media_n_5f998039c5b6a4a2dc813d3d)?
             
 This got me wondering, how do different generations view QAnon  –  the most significant source of misinformation of 2020? Which generations are most in agreement with QAnon and which are most in disagreement? 
@@ -27,21 +147,65 @@ Fortunately, I can answer this question. In the last week of October, I, along w
 
 To gauge QAnon support we asked respondents whether they agreed that, “Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump's efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” Nearly 40 percent of the sample agreed or strongly agreed.
 
-Looking to the graph below, we can see that Millennials and Gen X’ers agree with QAnon more than any other generation as roughly 48% and 46% of the respondents agreed, respectively. Following them was the Silent Generation with 39% and Gen Z with 36.8%. Surprisingly, **Boomers had the lowest levels** of agreement with only 35.4%. This demonstrates that although Boomers may spread more false information, they don’t believe in conspiracy theories (at least QAnon) as much as other generations, particularly Gen X and Millennials.
+Looking to the graph below, we can see that Millennials and Gen X’ers agree with QAnon more than any other generation as roughly 44.6% and 42.7% of the respondents agreed, respectively. Following them was the Silent Generation with 38.6%, Boomers at 34.6%, and Gen Z at 33.9%. Surprisingly, **Boomers and Gen Z had the lowest levels** of agreement with QAnon. This demonstrates that although Boomers may spread more false information, they don’t believe in conspiracy theories (at least QAnon) as much as other generations, particularly Gen X and Millennials.
 
-![my-first-image](image_1.png)
+```{r echo=FALSE}
+#Bar Plot for each generations support of QAnon
+O20 %>% 
+  group_by(cohorts) %>% filter(cohorts!="NA") %>% 
+  ct(q38_10lab, wt=wgt) %>% 
+  ggplot(., aes(x=reorder(cohorts, pct), y=pct, fill=q38_10lab)) + 
+  geom_col(alpha=.8, color="black", width = .75, position = position_dodge2()) + 
+  theme_hc() +
+  theme(text=element_text(family="JS", size=12),
+        legend.position = "right",
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size=.5, color="gray80"),
+        axis.text.x = element_text(size=9),
+        plot.title = element_text(hjust = .5)) +
+  geom_text(aes(y=(pct+.025), label = round(pct*100, digits=2)), family="JS",
+            position = position_dodge(width = .75)) +
+  scale_y_continuous(labels=percent_format(accuracy=1)) +
+  labs(x="", y="", 
+       title="Millennials and Gen X'ers Have the Highest QAnon Support",
+       caption="Source: October 2020 Survey; @JDenn0514") +
+  scale_fill_manual(name="QAnon Supporter?", 
+                    labels=c("Disagree", "Agree"), 
+                    values = c("#FF6F00FF", "#C71000FF"))
 
-In a previous [article](https://www.washingtonpost.com/politics/2021/01/26/christian-nationalists-qanon-followers-tend-be-anti-semitic-that-was-visible-capitol-attack/), Paul A. Djupe and I looked at the relationship between antisemitism, QAnon, and Christian Nationalism. We demonstrated that as Christian nationalism increases, antisemitic sentiment also increases. This was especially true among QAnon followers as they had higher levels of antisemitism regardless of their Christian Nationalism levels. We concluded that QAnon must have an impact on antisemitism.[1] This got me wondering, does this impact differ for each generation? Turns out, it does affect each generation very differently.
+```
 
-We can see in the graph below that QAnon has the biggest impact on antisemitic sentiment among Millennials and Gen Z. In fact, we can see that the effect QAnon has on antisemitic sentiment increases dramatically for younger generations. For Gen Z, the difference among QAnon and non-QAnon followers is 2.76 antisemitic tropes (e.g., “Jews killed Jesus.”), for Millennials it is 2.54 tropes, for Gen X it is 1.79, Boomers it is 0.54, and for the Silent Generation it is 0.88 tropes. Put another way, overt antisemitic sentiment increases by 154% among Gen Z QAnon followers, but for Boomers it increases by only 33%.  This might be attributed to older generations’ exposure to the Holocaust which limits what parts of the QAnon conspiracy theory they are willing to believe, such as the [antisemitic](https://www.jta.org/2020/09/18/politics/qanon-is-an-old-form-of-anti-semitism-in-a-new-package-experts-say) aspects. Unfortunately, young people do not have this limiter and are more willing to accept many more aspects of QAnon theories.
+In a previous [article](https://www.washingtonpost.com/politics/2021/01/26/christian-nationalists-qanon-followers-tend-be-anti-semitic-that-was-visible-capitol-attack/), Paul A. Djupe and I looked at the relationship between antisemitism, QAnon, and Christian Nationalism. We demonstrated that as Christian nationalism increases, antisemitic sentiment also increases. This was especially true among QAnon followers as they had higher levels of antisemitism regardless of their Christian Nationalism levels. We concluded that QAnon must have an impact on antisemitism.^[To measure antisemitic sentiment, I borrowed eight items from surveys conducted by the Anti-Defamation League (ADL), a non-profit dedicated to fighting hatred. These included asking respondents whether they believed in such common antisemitic stereotypes as whether Jews have dual loyalties (to Israel and the US), whether they have too much power in the world, and whether Jews killed Christ. We can see the average number of tropes agreed with in the graph below. Just like with QAnon support, Millennials and Gen X are the two highest with 3.34 and 2.91 tropes, respectively.] This got me wondering, does this impact differ for each generation? Turns out, it does affect each generation very differently.
 
-![my-second-image](image_2.png)
+We can see in the graph below that QAnon has the biggest impact on antisemitic sentiment among Millennials and Gen Z. In fact, we can see that the effect QAnon has on antisemitic sentiment increases dramatically for younger generations. For Gen Z, the difference among QAnon and non-QAnon followers is 2.61 antisemitic tropes (e.g., “Jews killed Jesus.”), for Millennials it is 2.52 tropes, for Gen X it is 1.83, Boomers it is 0.63, and for the Silent Generation it is 0.89 tropes. Put another way, overt antisemitic sentiment increases by 150% (2.5x larger) among Gen Z QAnon followers, but for Boomers it increases by only 39% (1.39x larger).  This might be attributed to older generations’ exposure to the Holocaust which limits what parts of the QAnon conspiracy theory they are willing to believe, such as the [antisemitic](https://www.jta.org/2020/09/18/politics/qanon-is-an-old-form-of-anti-semitism-in-a-new-package-experts-say) aspects. Unfortunately, young people do not have this limiter and are more willing to accept more aspects of QAnon theories.
+
+```{r echo=FALSE}
+#Generation mean trope bar plot with QAnon
+O20 %>% 
+  group_by(cohorts, q38_10lab) %>% filter(cohorts!="NA") %>% 
+  mean_ci(tropes, wt=wgt, ci=.84) %>% 
+  ggplot(., aes(x=cohorts, y=mean, fill=q38_10lab)) + 
+  geom_col(alpha=.8, color="black", width = .75, position = position_dodge2()) + 
+  theme_hc() +
+  theme(text=element_text(family="JS", size=12),
+        legend.position = "right",
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size=.5, color="gray80"),
+        axis.text.x = element_text(size=9),
+        plot.title = element_text(hjust = .5)) +
+  geom_text(aes(y=(mean+.25), label = round(mean, digits=2)), family="JS",
+            position = position_dodge(width = .75)) +
+  scale_y_continuous() +
+  labs(x="", y="Number of tropes people agree with", 
+       title="QAnon Has the Greatest Effect on Younger Generations",
+       caption="Source: October 2020 Survey; @JDenn0514") +
+  scale_fill_manual(name="QAnon Supporter?", 
+                    labels=c("Disagree", "Agree"), 
+                    values = c("#FF6F00FF", "#C71000FF"))
+
+```
 
 QAnon is a conspiracy theory that took this country by storm and while many think it is some fringe theory relegated to far-right extremists, it is not. Over one third of the respondents from each generation are QAnon supporters, with the highest support coming from Millennials (47.8%) and Gen X (46.2%). This is significant for two reasons. First, we have seen how QAnon can lead to violence (e.g., January 6th insurrection). Second, it significantly boosts antisemitic sentiment, especially among young people.
 
 This begs the question, is QAnon indoctrinating its followers in antisemitism or is it simply attracting people that are already antisemitic? And more importantly, assuming these people get reintegrated into mainstream society, will they maintain these antisemitic views? 
 
----
-
-**Notes**
-[1] To measure antisemitic sentiment, I borrowed eight items from surveys conducted by the Anti-Defamation League (ADL), a non-profit dedicated to fighting hatred. These included asking respondents whether they believed in such common antisemitic stereotypes as whether Jews have dual loyalties (to Israel and the US), whether they have too much power in the world, and whether Jews killed Christ. We can see the average number of tropes agreed with in the graph below. Just like with QAnon support, Millennials and Gen X are the two highest with 3.34 and 2.91 tropes, respectively.
