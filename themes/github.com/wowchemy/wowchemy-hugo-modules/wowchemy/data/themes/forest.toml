@@ -5,7 +5,7 @@ name = "Forest"
 light = true
 
 # Primary
-primary = "#84D7E1"
+primary = "#0066a0"
 
 # Menu
 menu_primary = "#84D7E1"
