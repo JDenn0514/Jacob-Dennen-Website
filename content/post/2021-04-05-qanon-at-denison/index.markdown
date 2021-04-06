@@ -21,41 +21,31 @@ projects: []
 
 
 
-
-
 #This article is in the process of being written
 
-"I  believe that there is some sort of sex trafficking ring that the elites are involved in. Does that mean I believe in QAnon??" This is part of a conversation I had with a close friend of mine when I told him about a previous post of mine that looked at QAnon's relationship with different generations (found on my [website](https://jacob-dennen.netlify.app/post/qanon-millenials-and-gen-z/) and [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)). 
+"I  believe that there is some sort of sex trafficking ring that the elites are involved in. Does that mean I believe in QAnon??" 
 
+This is part of a conversation I had with a close friend of mine when I was talking to him about QAnon. As someone who was actively involved in many social justice issues, he was terrified of the possibility that he agreed with the QAnon conspiracy theory given its support for Trump and a whole host of other issues. 
 
+Recently, I wrote another post (found on my [website](https://jacob-dennen.netlify.app/post/qanon-millenials-and-gen-z/) and [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)) about how QAnon support varies by generation. I found that Boomers and Zoomers (Gen Z'ers) had the lowest agreement levels with 34.6% and 33.9%, respectively. That is still a really high number. At least one in every three Boomer and Zoomer agree with QAnon. When I saw this number I knew I had to see how many Denison students also agreed with QAnon.
 
+To gauge QAnon support we asked respondents whether they agreed that, “Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump’s efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” Nearly 18% of Denison Students agreed with QAnon.
 
+We can see in the graph below an overall view of how Denison students view QAnon. More than half (51%) of Denisonians actively disagree with Qanon with 36% strongly disagreeing and 15% somewhat disagreeing. Another 31% don't really have an opinion or simply do not know. The remaining 18% actively agree with QAnon with 13% somewhat agreeing and 5% strongly agreeing. 
 
-```r
-m21 %>% group_by(gender2) %>% 
-  filter(q6rf!="NA") %>% 
-  ct(q6rf) %>% 
-  ggplot(., aes(x=q6rf, y=pct, fill= gender2)) + 
-  geom_col(alpha=.8, color="black", width = .75, position = position_dodge2()) + 
-  theme_hc() +
-  theme(text=element_text(family="O", size=12),
-        legend.position = "bottom",
-        panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(size=.5, color="gray80"),
-        axis.text.x = element_text(size=9),
-        plot.title = element_text(hjust = .5)) +
-  geom_text(aes(y=(pct+.025), label = round(pct*100, digits=2)), family="O",
-            position = position_dodge(width = .75)) +
-  scale_y_continuous(labels=percent_format(accuracy=1)) +
-  labs(x="", y="", 
-       title="Gendered Views of QAnon",
-       caption="Source: October 2020 Survey; @JDenn0514") +
-  scale_fill_manual(name="Gender", 
-                    labels=c("Men", "Women", "NA"), 
-                    values = c("#FF6F00FF", "#C71000FF", "White"))
-```
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
+This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%. We can see that only 14.3% of students who identify as non-binary agree with QAnon. For transgender folks, 100% either disagree or did not have an opinion on QAnon.^[It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary]
+
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+
+Next up we have is how POC view QAnon compared to whites. We can see in the graph below that a POC are overwhelmingly more supportive of QAnon than whites.  
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+
+
+
 
 
 
