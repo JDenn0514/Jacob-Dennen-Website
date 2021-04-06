@@ -120,7 +120,7 @@ O20 <- O20 %>% mutate(q38_10lab=frcode(q38_10rc==0 ~ "Disagree",
 
 ```
 
-```{r}
+```{r, include=FALSE}
 #March Survey Data
 #Import Data, if you would like access, email me at Dennen_j1@denison.edu####
 library(readr)
