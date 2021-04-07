@@ -35,7 +35,7 @@ We can see in the graph below an overall view of how Denison students view QAnon
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
-This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.^[It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary]
+This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.^[1]:It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary
 
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
@@ -50,31 +50,6 @@ How about when we break it down by racial group? Before I dig into this data, I 
 
 It is not exactly clear what causes this discrepancy between POC and Whites. However, we can see that political interest clearly has opposite effects on QAnon support among POC and Whites. For Whites, as people become less interested in politics they become more supportive of QAnon. For POC, more political interest leads to more support for QAnon. 
 
-
-
-```r
-#Interact plot that shows political interest and QAnon support
-lm_polint_poc <-glm(q6lab ~ polint*poc+ed+pid8+gender4, 
-                 data = m21, family = binomial)
-interact_plot(lm_polint_poc, pred = polint, modx = poc,
-              int.width=.76, interval = TRUE, 
-              colors = c("#FF6F00FF","#C71000FF", "#008EA0FF", "#8A4198FF","#84D7E1FF"),
-              legend.main = "") +
-  theme_minimal() +
-  theme(text=element_text(family="O", size=12),
-        panel.grid.major.y = element_blank(),
-        panel.grid.major.x = element_line(size=.5, color="gray80"),
-        legend.position = "right",
-        legend.title = element_text(),
-        plot.title = element_text(hjust = .5))+
-  scale_x_continuous(labels = c("Not At All Interested", 
-                                "Slightly Interested", 
-                                "Moderately Interested",
-                                "Very Interested",
-                                "Extremely Interested"))+
-  labs(x="Political Interest", y="QAnon Support",
-       title = "Political Interest Leads to Stronger Support for QAnon Among POC")
-```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 

@@ -200,7 +200,7 @@ m21 %>%
 
 ```
 
-This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.^[It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary]
+This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.^[1]:It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary
 
 
 ```{r, echo=FALSE}
@@ -282,7 +282,7 @@ m21 %>% group_by(race) %>% filter(race!="NA") %>%
 It is not exactly clear what causes this discrepancy between POC and Whites. However, we can see that political interest clearly has opposite effects on QAnon support among POC and Whites. For Whites, as people become less interested in politics they become more supportive of QAnon. For POC, more political interest leads to more support for QAnon. 
 
 
-```{r}
+```{r, echo=FALSE}
 #Interact plot that shows political interest and QAnon support
 lm_polint_poc <-glm(q6lab ~ polint*poc+ed+pid8+gender4, 
                  data = m21, family = binomial)
