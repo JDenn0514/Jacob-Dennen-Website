@@ -19,6 +19,8 @@ projects: []
 
 ```{r, include=FALSE}
 #Package Libraries
+#install.packages("knitr")
+library(knitr)
 #install.packages("xaringan")
 library(xaringan)
 #install.packages("servr")
