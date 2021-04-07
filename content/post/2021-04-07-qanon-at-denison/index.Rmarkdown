@@ -170,7 +170,7 @@ This is part of a conversation I had with a close friend of mine when I was talk
 
 Recently, I wrote another post based on data gathered from a national survey (found on my [website](https://jacob-dennen.netlify.app/post/qanon-millenials-and-gen-z/) and [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)) about how QAnon support varies by generation. Despite having the lowest levels of agreement at least one out of every three Boomer and Zoomer (Gen Z) agreed with QAnon, with 34.6% and 33.9% saying they agree with QAnon, respectively. When I saw how widespread QAnon support is among Gen Z, I began to ask, how widespread is QAnon support  among Denison students?
 
-Fortunately, I can answer this queston. In March 2021, I was able to collaborate with a few other students on a survey that got sent out to the entire student body. To gauge QAnon support we asked respondents whether they agreed that, “Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump’s efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” The respondents were then given the options "Strongly Disagree", "Somewhat Disagree", "Neither Disagree nor Agree", "Somewhat Agree", or "Strongly Agree". Turns out nearly one in every five students (18%) chose either "Strongly Agree" or "Somewhat Agree" with QAnon views.
+Fortunately, I can answer this question. In March 2021, I was able to collaborate with a few other students on a survey that got sent out to the entire student body. To gauge QAnon support we asked respondents whether they agreed that, “Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump’s efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” The respondents were then given the options "Strongly Disagree", "Somewhat Disagree", "Neither Disagree nor Agree", "Somewhat Agree", or "Strongly Agree". Turns out nearly one in every five students (18%) chose either "Strongly Agree" or "Somewhat Agree" with QAnon views.
 
 We can see in the graph below an overall view of how Denison students view QAnon. More than half (51%) of Denisonians actively disagree with Qanon with 36% strongly disagreeing and 15% somewhat disagreeing. Another 31% don't really have an opinion or simply do not know. The remaining 18% actively agree with QAnon with 13% somewhat agreeing and 5% strongly agreeing. While it is good that the percentage of students who actively agree is relatively low, it is still worrisome that 49% of the respondents found enough truth in the statement to say that they disagree.
 
@@ -193,6 +193,7 @@ m21 %>%
        title="How Denison Students View of QAnon",
        caption="Source: March 2021 Survey; @JDenn0514") +
   scale_fill_manual(values=c("#84D7E1FF", "#84D7E1FF", "#84D7E1FF", "#84D7E1FF", "#84D7E1FF"))
+
 
 
 ```
