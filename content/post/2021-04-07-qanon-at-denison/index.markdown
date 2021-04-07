@@ -35,7 +35,7 @@ We can see in the graph below an overall view of how Denison students view QAnon
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
-This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.^[1]:It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary
+This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.[^1]
 
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
@@ -55,4 +55,4 @@ It is not exactly clear what causes this discrepancy between POC and Whites. How
 
 QAnon is a very dangerous conspiracy theory that has a history of fomenting violence. Throughout this post I looked at how prevalent the conspiracy theory is among Denison students. I found that women are slighlty more supportive of QAnon than men, and POC are much more likely to agree with QAnon than Whites. This defies the conventional belief that QAnon supporters are white men who are ardent Trumpers. This begs the question, is the demographic shift among QAnon supporters among Gen Z just a Denison experience, or is it representative of a wider shift among society?
 
-
+[^1]:It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary
