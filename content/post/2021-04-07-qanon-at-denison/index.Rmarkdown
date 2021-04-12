@@ -1,12 +1,12 @@
 ---
-title: QAnon at Denison (Under development)
-author: R package build
-date: '2021-04-05'
+title: "QAnon at Denison"
+author: 
+date: '2021-04-12'
 slug: qanon-at-denison
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: How widespread is QAnon among Denison students and what are factors that help explain different demographic differences?
 authors: []
 lastmod: '2021-04-05T15:29:27-04:00'
 featured: no
@@ -153,7 +153,6 @@ m21 <- m21 %>% mutate(q39_1f=frcode(q39_1== 1 ~ "Very Embarrassed",
 
 
 ```
-*This article is in the process of being written*
 
 "I  believe that there is some sort of sex trafficking ring that the elites are involved in. Does that mean I believe in QAnon?" 
 
@@ -162,6 +161,7 @@ This is part of a conversation about QAnon I had with a close friend. As someone
 Recently, I wrote another post (found on my [website](https://jacob-dennen.netlify.app/post/qanon-millenials-and-gen-z/) and [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)) based on data gathered from a national survey  about how QAnon support varies by generation. Despite having the lowest levels of agreement, at least one out of every three Boomers and Zoomers (Gen Z) agreed with QAnon. When I saw how widespread QAnon support was among Gen Z, I had to ask, how widespread is QAnon support among Denison students?
 
 Fortunately, I can answer this question. In March 2021, I was able to collaborate with a few other students on a survey that got sent out to the entire student body. To gauge QAnon support we asked respondents whether they agreed that, 
+
 >“Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump’s efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” 
 
 The respondents were then given the options "Strongly Disagree", "Somewhat Disagree", "Neither Disagree nor Agree", "Somewhat Agree", or "Strongly Agree". Turns out nearly one in every five students (18%) chose either "Strongly Agree" or "Somewhat Agree" with QAnon views.
@@ -193,7 +193,7 @@ m21 %>%
 
 ```
 
-Nationally, I think it’s pretty clear what a QAnon supporter is. Most people think of them as being white, conservative, Christian, and less educated. While this is true most of the time, QAnon is not limited to these groups and is quite widespread. Is this reflected at Denison as well? In the graph below we can see that more women support QAnon with 21.5% agreeing compared to only 13.5% of men, 14.3% of students who identify as non-binary, and none of the transgender respondents. This is the opposite of the national data where a near majority of men (47%) agree with the statement compared to just a third of women.  
+Nationally, I think it’s pretty clear what a QAnon supporter is. Most people think of them as being white, conservative, Christian, and less educated. While this is true most of the time, QAnon is not limited to these groups and is quite widespread. Is this reflected at Denison as well? In the graph below we can see that more women support QAnon with 21.5% agreeing compared to only 13.5% of men, 14.3% of students who identify as non-binary, and none of the transgender respondents. This is the opposite of the national data where a near majority of men (47%) agree with the statement compared to just a third of women.[^1]  
 
 ```{r, echo=FALSE}
 m21 %>% group_by(gender4) %>% filter(gender4!="NA") %>% 
