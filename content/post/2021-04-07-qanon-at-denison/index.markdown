@@ -48,7 +48,7 @@ How about when we break it down by racial group? Before I dig into this data, I 
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
-It is not exactly clear what causes this discrepancy between POC and Whites. However, we can see that political interest clearly has opposite effects on QAnon support among POC and Whites. For Whites, as people become less interested in politics they become more supportive of QAnon. For POC, more political interest leads to more support for QAnon. 
+
 
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
@@ -56,3 +56,8 @@ It is not exactly clear what causes this discrepancy between POC and Whites. How
 QAnon is a very dangerous conspiracy theory that has a history of fomenting violence. Throughout this post I looked at how prevalent the conspiracy theory is among Denison students. I found that women are slighlty more supportive of QAnon than men, and POC are much more likely to agree with QAnon than Whites. This defies the conventional belief that QAnon supporters are white men who are ardent Trumpers. This begs the question, is the demographic shift among QAnon supporters among Gen Z just a Denison experience, or is it representative of a wider shift among society?
 
 [^1]:It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary
+
+
+
+
+
