@@ -110,6 +110,7 @@ m21 <- m21 %>% mutate(gender4= case_when(q54_3==1 ~ "Transgender",
                                          q54_4==1 & (q54_3!=1) ~ "Non-binary",
                                          q54_1==1 & (q54_3==0 & q54_4==0) ~ "Male",
                                          q54_2==1 & (q54_3==0 & q54_4==0) ~ "Female"))
+
 #Race
 #Replacing all "NAs" with zeroes
 m21 <- m21 %>% mutate(white=car::recode(q57_1, "NA=0"),
@@ -125,24 +126,6 @@ m21 <- m21 %>% mutate(race=case_when(black==1 ~ "Black",
                                      white==1 & (black!=1 & hispanic!=1 & asian!=1 & other!=1) ~ "White"))
 m21 <- m21 %>% mutate(poc=frcode(white==1 ~ "White",
                                  hispanic==1|black==1|asian==1|other==1 ~ "POC"))
-
-m21 %>% filter(poc!="NA") %>% ct(poc)
-m21 %>% filter(race!="NA") %>% ct(race)
-
-
-#Family income
-m21 <- m21 %>% mutate(famincf=frcode(faminc==1 ~ "Lower Class",
-                                     faminc==2 ~ "Lower-Middle Class",
-                                     faminc==3 ~ "Middle Class",
-                                     faminc==4 ~ "Upper-Middle Class",
-                                     faminc==5 ~ "Upper Class"))
-
-#Making Political interest variable
-m21 <- m21 %>% mutate(polintf=frcode(polint==1 ~ "Not Interested\nAt All",
-                                     polint==2 ~ "Slightly\nInterested",
-                                     polint==3 ~ "Moderately\nInterested",
-                                     polint==4 ~ "Very\nInterested",
-                                     polint==5 ~ "Extremely\nInterested"))
 
 
 #Making QAnon variable
@@ -161,6 +144,12 @@ m21 <- m21 %>% mutate(q6lab3=frcode(q6r==1|q6r==2 ~ "Disagree",
                                     q6r==3 ~ "Neither Agree\nnor Disagree",
                                     q6r==4|q6r==5 ~ "Agree"))
 
+#Proud/Embarrassed of US Democracy
+m21 <- m21 %>% mutate(q39_1f=frcode(q39_1== 1 ~ "Very Embarrassed", 
+                                    q39_1== 2 ~ "Somewhat Embarrassed", 
+                                    q39_1== 3 ~ "Neither Embarrassed\nnor Proud",
+                                    q39_1== 4 ~ "Somewhat Proud",
+                                    q39_1== 5 ~ "Very Proud"))
 
 
 ```
@@ -168,13 +157,16 @@ m21 <- m21 %>% mutate(q6lab3=frcode(q6r==1|q6r==2 ~ "Disagree",
 
 "I  believe that there is some sort of sex trafficking ring that the elites are involved in. Does that mean I believe in QAnon?" 
 
-This is part of a conversation I had with a close friend of mine when I was talking to him about QAnon. As someone who was actively involved in many social justice issues, he was terrified of the possibility that he agreed with the QAnon conspiracy theory given its support for Trump and a whole host of other issues. 
+This is part of a conversation about QAnon I had with a close friend. As someone actively involved in many social justice issues, he was terrified of the possibility that he agreed with the QAnon conspiracy theory given its support for Trump and a whole host of other issues. But this is just the thing – the tendrils of the conspiracy theory have extended throughout society, whether we affirm it consciously as QAnon or not.  
 
-Recently, I wrote another post based on data gathered from a national survey (found on my [website](https://jacob-dennen.netlify.app/post/qanon-millenials-and-gen-z/) and [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)) about how QAnon support varies by generation. Despite having the lowest levels of agreement at least one out of every three Boomer and Zoomer (Gen Z) agreed with QAnon, with 34.6% and 33.9% saying they agree with QAnon, respectively. When I saw how widespread QAnon support is among Gen Z, I began to ask, how widespread is QAnon support  among Denison students?
+Recently, I wrote another post (found on my [website](https://jacob-dennen.netlify.app/post/qanon-millenials-and-gen-z/) and [One Twenty Seven](https://onetwentyseven.blog/2021/03/17/qanon-millennials-and-gen-z/)) based on data gathered from a national survey  about how QAnon support varies by generation. Despite having the lowest levels of agreement, at least one out of every three Boomers and Zoomers (Gen Z) agreed with QAnon. When I saw how widespread QAnon support was among Gen Z, I had to ask, how widespread is QAnon support among Denison students?
 
-Fortunately, I can answer this question. In March 2021, I was able to collaborate with a few other students on a survey that got sent out to the entire student body. To gauge QAnon support we asked respondents whether they agreed that, “Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump’s efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” The respondents were then given the options "Strongly Disagree", "Somewhat Disagree", "Neither Disagree nor Agree", "Somewhat Agree", or "Strongly Agree". Turns out nearly one in every five students (18%) chose either "Strongly Agree" or "Somewhat Agree" with QAnon views.
+Fortunately, I can answer this question. In March 2021, I was able to collaborate with a few other students on a survey that got sent out to the entire student body. To gauge QAnon support we asked respondents whether they agreed that, 
+>“Within the upper reaches of government, media, and finance, a secretive group of elites are thwarting Donald Trump’s efforts at reform, fomenting street violence, and engaging in child trafficking and other crimes.” 
 
-We can see in the graph below an overall view of how Denison students view QAnon. More than half (51%) of Denisonians actively disagree with Qanon with 36% strongly disagreeing and 15% somewhat disagreeing. Another 31% don't really have an opinion or simply do not know. The remaining 18% actively agree with QAnon with 13% somewhat agreeing and 5% strongly agreeing. While it is good that the percentage of students who actively agree is relatively low, it is still worrisome that 49% of the respondents found enough truth in the statement to say that they disagree.
+The respondents were then given the options "Strongly Disagree", "Somewhat Disagree", "Neither Disagree nor Agree", "Somewhat Agree", or "Strongly Agree". Turns out nearly one in every five students (18%) chose either "Strongly Agree" or "Somewhat Agree" with QAnon views.
+
+We can see in the graph below how Denison students view QAnon. More than half (51%) of Denisonians actively disagree with Qanon with 36% strongly disagreeing and 15% somewhat disagreeing. Another 31% don’t really have an opinion or simply do not know. The remaining 18% actively agree with QAnon with 13% somewhat agreeing and 5% strongly agreeing. While it is good that the percentage of students who actively agree is relatively low, it is still worrisome that 49% of the respondents found enough truth in the statement to not say that they disagree.
 
 ```{r, echo=FALSE}
 
@@ -188,20 +180,20 @@ m21 %>%
         panel.grid.major.x = element_blank(),
         panel.grid.major.y = element_line(size=.5, color="gray80"),
         axis.text.x = element_text(size=9),
-        plot.title = element_text(hjust = .5)) +
-  geom_text(aes(label = round(pct, digits=2)*100), family="O", nudge_y = -.02) +
+        plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5)) +
+  geom_text(aes(label = round(pct, digits=2)*100), family="O", nudge_y = -.02, color="white") +
   scale_y_continuous(labels=percent_format(accuracy=1)) +
   labs(x="", y="", 
-       title="How Denison Students View of QAnon",
-       caption="Source: March 2021 Survey; @JDenn0514") +
-  scale_fill_manual(values=c("#84D7E1FF", "#84D7E1FF", "#84D7E1FF", "#84D7E1FF", "#84D7E1FF"))
-
+       title="Most Students Disagree with the Substance of QAnon",
+       subtitle = "Within the upper reaches of government, media, and finance, a secretive group\nof elites are thwarting Donald Trump’s efforts at reform, fomenting street violence,\nand engaging in child trafficking and other crimes.",
+       caption="Source: Denison March 2021 Survey; @JDenn0514") +
+  scale_fill_manual(values=c("#1A5354FF", "#1A5354FF", "#1A5354FF", "#1A5354FF", "#1A5354FF"))
 
 
 ```
 
-This got me wondering, are there certain demographic differences that influence support for QAnon. In the graph below we can see that women support QAnon more than men with 21.5% agreeing to only 13.5%, 14.3% of students who identify as non-binary agree with QAnon, and none of the transgender respondents agree with QAnon.[^1]
-
+Nationally, I think it’s pretty clear what a QAnon supporter is. Most people think of them as being white, conservative, Christian, and less educated. While this is true most of the time, QAnon is not limited to these groups and is quite widespread. Is this reflected at Denison as well? In the graph below we can see that more women support QAnon with 21.5% agreeing compared to only 13.5% of men, 14.3% of students who identify as non-binary, and none of the transgender respondents. This is the opposite of the national data where a near majority of men (47%) agree with the statement compared to just a third of women.  
 
 ```{r, echo=FALSE}
 m21 %>% group_by(gender4) %>% filter(gender4!="NA") %>% 
@@ -220,13 +212,13 @@ m21 %>% group_by(gender4) %>% filter(gender4!="NA") %>%
             position=position_stack(reverse=TRUE, vjust=.5), family="O", size=3.5) +
   scale_y_continuous(labels=percent_format(accuracy=1)) +
   labs(x="", y="", 
-       title="Women Are More Supportive of QAnon",
-       caption="Source: March 2021 Survey; @JDenn0514") +
+       title="Women Are More Supportive of the Substance of QAnon",
+       caption="Source: Denison March 2021 Survey; @JDenn0514") +
   scale_fill_futurama(name="")
 
 ```
 
-Next, let's look at how POC compare to Whites We can see in the graph below that POC are overwhelmingly more supportive of QAnon than White. While 15.5% of Whites actively agree with QAnon, 26.1% of POC agree with QAnon. Furthermore, 57.9% of Whites actively disagree with QAnon with 26.5% choosing "neither agree nor disagree". For POC, the number who disagree drops down to 33.9% and the number who neither agree nor disagree increases to 40%.
+We just saw how support for QAnon among genders flipped at Denison, let’s see if Whites vs POC does the same thing.[^2] Again, contrary to the results from a national survey, POC at Denison are more supportive of QAnon than Whites. While 15.5% of Whites actively agree with QAnon, 26.1% of POC agree with QAnon. Furthermore, 57.9% of Whites actively disagree with QAnon with 26.5% choosing “neither agree nor disagree”. For POC, the number who disagree drops down to 33.9% and the number who neither agree nor disagree increases to 40%.
 
 ```{r, echo=FALSE}
 m21 %>% group_by(poc) %>% filter(poc!="NA") %>% 
@@ -240,55 +232,26 @@ m21 %>% group_by(poc) %>% filter(poc!="NA") %>%
         panel.grid.major.y = element_line(size=.5, color="gray80"),
         axis.text.x = element_text(size=9),
         plot.title = element_text(hjust = .5)) +
-  geom_text(aes(y=(pct+.025), label = round(pct*100, digits=2)), family="JS",
+  geom_text(aes(y=(pct+.025), label = round(pct*100, digits=2)), family="O",
             position = position_dodge(width = .75)) +
   scale_y_continuous(labels=percent_format(accuracy=1)) +
   labs(x="", y="", 
-       title="POC Are Much More Supportive of QAnon than Whites",
-       caption="Source: March 2021 Survey; @JDenn0514") +
-  scale_fill_futurama(name="")
+       title="POC Are More Supportive of the Substance of QAnon than Whites",
+       caption="Source: Denison March 2021 Survey; @JDenn0514") +
+  scale_fill_manual(name="", values = c("#84D7E1FF", "#8A4198FF"))
 
 
 
 ```
 
-How about when we break it down by racial group? Before I dig into this data, I think it's important to understand that these are very small sample sizes and there is a good chance they do not reflect how each of these communities actually sees QAnon. Nevertheless, let's get into it. We can see in the graph below that less than a quarter (23.3%) of Blacks disagree with QAnon. This means that 75% of Blacks find enough truth in the statement that they don't feel like they can say that they disagree. Perhaps more worrisome is that 40% actively agree with QAnon. Interestingly, Hispanics have both second highest percentage of respondents to agree (29.2%) and disagree (50%) and Asians have the largest share of respondents who said "neither agree nor disagree" (39%) and the smallest percentage of people who actively agreed (14.3%). This suggests that many Hispanics feel strongly about it one way or the other, while many Asians do not have a strong enough opinoin to choose agree or disagree.
+As I am sure you all are thinking, at first glance this doesn’t make much sense. It wasn’t until I began  looking for a question that could help explain this that it finally started to make more sense. We can see below that feelings towards US democracy have a strong impact on whether POC agree with QAnon.  Given the strong anti-establishment and anti-elite rhetoric of QAnon beliefs this should not be very surprising. When people are embarrassed or frustrated with something, especially something like the way the government is working or the economy, they are likely to look for a scapegoat to blame. This is where QAnon comes into play and why it is so successful. QAnon scapegoats the elites and claims that they are the ones not allowing reforms to happen. This does two things: (1) It takes advantage of the anti-elite sentiment that already exists; and (2) It provides people with a scapegoat. 
 
 ```{r, echo=FALSE}
-library(wesanderson)
-
-m21 %>% group_by(race) %>% filter(race!="NA") %>% 
-  filter(q6lab3!="NA") %>% ct(q6lab3) %>% 
-  ggplot(., aes(x=race, y=pct, fill= q6lab3)) + 
-  geom_col(alpha=.8, color="black", position=position_stack(reverse=TRUE)) + 
-  theme_hc() +
-  coord_flip()+
-  theme(text=element_text(family="O", size=12),
-        legend.position = "right",
-        panel.grid.major.y = element_blank(),
-        panel.grid.major.x = element_line(size=.5, color="gray80"),
-        axis.text.x = element_text(size=9),
-        plot.title = element_text(hjust = .5)) +
-  geom_text(aes(label=ifelse(pct>.05, pct*100, " ")), color="white",
-            position=position_stack(reverse=TRUE, vjust=.5), family="O", size=3.5) +
-  scale_y_continuous(labels=percent_format(accuracy=1)) +
-  labs(x="", y="", 
-       title="Non-Whites More Supportive",
-       caption="Source: March 2021 Survey; @JDenn0514") +
-  scale_fill_futurama(name="")
-
-```
-
-It is not exactly clear what causes this discrepancy between POC and Whites. However, we can see that political interest clearly has opposite effects on QAnon support among POC and Whites. For Whites, as people become less interested in politics they become more supportive of QAnon. For POC, more political interest leads to more support for QAnon. 
-
-
-```{r, echo=FALSE}
-#Interact plot that shows political interest and QAnon support
-lm_polint_poc <-glm(q6lab ~ polint*poc+ed+pid8+gender4, 
+lm_dem_poc <-glm(q6lab ~ q39_1*poc+ed+pid8+gender4+polint, 
                  data = m21, family = binomial)
-interact_plot(lm_polint_poc, pred = polint, modx = poc,
+interact_plot(lm_dem_poc, pred = q39_1, modx = poc,
               int.width=.76, interval = TRUE, 
-              colors = c("#FF6F00FF","#C71000FF", "#008EA0FF", "#8A4198FF","#84D7E1FF"),
+              colors = c("#84D7E1FF", "#8A4198FF"),
               legend.main = "") +
   theme_minimal() +
   theme(text=element_text(family="O", size=12),
@@ -297,16 +260,28 @@ interact_plot(lm_polint_poc, pred = polint, modx = poc,
         legend.position = "right",
         legend.title = element_text(),
         plot.title = element_text(hjust = .5))+
-  scale_x_continuous(labels = c("Not At All Interested", 
-                                "Slightly Interested", 
-                                "Moderately Interested",
-                                "Very Interested",
-                                "Extremely Interested"))+
-  labs(x="Political Interest", y="QAnon Support",
-       title = "Political Interest Leads to Stronger Support for QAnon Among POC")
+  scale_x_continuous(labels = c("Very Embarrassed", 
+                                "Somewhat Embarrassed", 
+                                "Neither Embarrassed\nnor Proud",
+                                "Somewhat Proud",
+                                "Very Proud"))+
+  scale_y_continuous(labels=percent_format(accuracy=1)) +
+  labs(x="Feelings Towards US Democracy", 
+       y="Percentage of People Who Agree\nwith the Substance of QAnon",
+       title = "Embarrassment of US Democracy and Support for\nQAnon Are Closely Linked Among People of Color",
+       caption="Source: Denison March 2021 Survey; @JDenn0514")
+
 
 ```
 
-QAnon is a very dangerous conspiracy theory that has a history of fomenting violence. Throughout this post I looked at how prevalent the conspiracy theory is among Denison students. I found that women are slighlty more supportive of QAnon than men, and POC are much more likely to agree with QAnon than Whites. This defies the conventional belief that QAnon supporters are white men who are ardent Trumpers. This begs the question, is the demographic shift among QAnon supporters among Gen Z just a Denison experience, or is it representative of a wider shift among society?
+
+
+
+QAnon is a very dangerous conspiracy theory that has a history of fomenting violence. Throughout this post I looked at how prevalent the conspiracy theory is among Denison students. Contrary to the rest of the country, women and POC at Denison are more supportive of QAnon than men and Whites. As Dr. Paul A. Djupe said, “QAnon style beliefs are like water that fill crevasses of trust between mass and elites.” For many in the general public, QAnon fills the gap in trust that people feel towards mainstream media, the “radical left”, and “the swamp”. For students at Denison, some QAnon beliefs likely play on the mistrust people have towards the elites. When I questioned my friend about how he could believe that the elites ran a secret sex trafficking ring, he asked me “How do you know there isn’t one? Are they really trustworthy enough to believe what they say?” 
 
 [^1]:It is important to note that there were only two respondents who identified as transgender and ten who identified as non-binary
+
+[^2]: It is important to note that this is an imperfect measurement in part because of the small sample size but also because different people of color have different experiences. Nevertheless, it is still telling how POC differ from Whites.
+
+
+
