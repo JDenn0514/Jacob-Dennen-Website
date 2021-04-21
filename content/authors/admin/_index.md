@@ -36,9 +36,9 @@ superuser: true
 title: Jacob Dennen
 ---
 
-Hi! Welcome to my website! A little about my website. First of all, it is still under maintenance and has not been completed yet but eventually will contain blog posts, projects, and other stuff I find interesting.
+Hi! Welcome to my website! A little about my website. First of all, it is still under maintenance and has not been completed yet. Eventually it will contain blog posts, projects, and other stuff I find interesting.
 
-About myself, my name is Jacob Dennen and I am a senior at Denison University studying political science. I am currently conducting research on antisemitism among the American Left, particularly Progressives and Liberals. Outside of school, I am on the Denison Men's Tennis Team and I am a die hard Chicago White Sox fan. 
+About myself, my name is Jacob Dennen and I am a senior at Denison University studying political science. I am currently conducting research on antisemitism among the American Left, particularly Progressives and Liberals. Outside of school, I am on the Denison Men's Tennis Team and a die hard Chicago White Sox fan. 
 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/Dennen-Jacob-Resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
