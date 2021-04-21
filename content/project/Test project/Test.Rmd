@@ -1,7 +1,6 @@
 ---
 title: "Testing"
 output: html_document
-date: "2016-04-27T00:00:00Z"
 external_link: ""
 image:
   caption: Photo by rawpixel on Unsplash
@@ -15,7 +14,7 @@ url_video: ""
 ---
 
 
----
+
 
 
 ```{r, include=FALSE}
@@ -131,7 +130,7 @@ O20 <- O20 %>% mutate(tropes_factor=as.factor(tropes))
 
 ```
 
-```{r echo=FALSE}
+```{r}
 #Bar Plot for each generations support of QAnon
 O20 %>% 
   group_by(cohorts) %>% filter(cohorts!="NA") %>% 
