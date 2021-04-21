@@ -26,28 +26,24 @@ subtitle = ""
     tag = "*"
 
   [[content.filter_button]]
-    name = "website"
-    tag = "website"
+    name = "Antisemitism"
+    tag = "antisemitism"
     
   [[content.filter_button]]
-    name = "R"
-    tag = "R"
+    name = "Political Ideology"
+    tag = "ideo"
     
   [[content.filter_button]]
-    name = "Software"
-    tag = "software"
+    name = "QAnon"
+    tag = "Q"
 
   [[content.filter_button]]
-    name = "Workshop"
-    tag = "workshop"
+    name = "Denison University"
+    tag = "DU"
   
   [[content.filter_button]]
-    name = "Course"
-    tag = "course"
-    
-  [[content.filter_button]]
-    name = "Book"
-    tag = "book"
+    name = "Generations"
+    tag = "generations"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -72,8 +68,8 @@ subtitle = ""
   # color = "navy"
   
   # Background gradient.
-  # gradient_start = "DeepSkyBlue"
-  # gradient_end = "SkyBlue"
+   gradient_start = "DeepSkyBlue"
+   gradient_end = "SkyBlue"
   
   # Background image.
   # image = "background.jpg"  # Name of image in `static/img/`.

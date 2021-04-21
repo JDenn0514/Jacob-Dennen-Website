@@ -1,21 +1,19 @@
 ---
-title: "Testing"
+title: "QAnon Popularity Among Generations"
 output: html_document
 external_link: ""
 image: 
   caption: ''
   preview_only: yes
-summary: A bar plot showing support for QAnon among different generations
+summary: A bar plot showing support for QAnon among different generations. Data gathered from a national survey.
 tags:
-- Deep Learning
+- antisemitism
+- Q
 url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
 ---
-
-
-
 
 
 ```{r, include=FALSE}
