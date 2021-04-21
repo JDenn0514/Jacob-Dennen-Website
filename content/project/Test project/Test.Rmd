@@ -2,9 +2,10 @@
 title: "Testing"
 output: html_document
 external_link: ""
-image:
-  caption: Photo by rawpixel on Unsplash
-summary: An example of using the in-built project page.
+image: 
+  caption: ''
+  preview_only: yes
+summary: A bar plot showing support for QAnon among different generations
 tags:
 - Deep Learning
 url_code: ""
