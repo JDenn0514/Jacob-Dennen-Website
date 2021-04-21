@@ -1,54 +1,121 @@
-/* nav */
-
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link:focus {
-	color: #0066a0;
-}
+/*************************************************
+ *  Navigation bar
+ **************************************************/
 
 .navbar {
+  height: 70px;
+  background: $sta-menu-primary;
+  background-image: url(/img/otis-redding.png);
   box-shadow: none;
-  text-transform: uppercase;
-	letter-spacing: .1em;
-	font-size: .9em;
+  font-size: 18px;
+  font-weight: 900 !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+
+  // Remove Bootstrap's navbar v-padding and assign v-padding to logo separately to maximise logo size.
+  // Otherwise, Bootstrap's navbar v-padding causes issue with logo fitting within fixed 50px height bar in md-lg sizes.
+  padding: 0 1rem;
+
+  .nav-item {
+    // For z-index compatibility with logo on mobile layout, otherwise nav-item can't be clicked when logo present.
+    position: relative;
+  }
+  @include media-breakpoint-down(md) {
+    height: 50px;
+
+    .navbar-nav-scroll {
+      width: 100%;
+      overflow: hidden;
+
+        /* add background image */
+      .navbar-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        background-image: url(/img/otis-redding.png);
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+
+    .nav-link {
+      color: rgba($sta-menu-text, .85);
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: #118AB2;
+      }
+
+      &.active {
+        font-weight: 900 !important;
+        color: $sta-menu-text-active !important;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    font-size: #{$sta-font-size-small}px;
+  }
+
+  // Note: dedicated `dropdown-item-active` class to prevent ScrollSpy removing `active` class from language chooser.
+  .dropdown-item.active,
+  .dropdown-item-active {
+    font-weight: bold;
+    color: $sta-menu-text-active !important;
+  }
+
 }
 
 .navbar-brand {
-  text-transform: uppercase;
-  font-weight: 700;
-	letter-spacing: .1em;
-}
-
-/*----NAV LINK HOVER ANIMATION -----*/
-/* from Desiree: https://github.com/dcossyleon/blogdown_desiree/blob/master/assets/scss/custom.scss */
-
-/* stroke */
-
-.navbar-nav a.nav-link,
-.navbar-nav a.nav-link:after,
-.navbar-nav a.nav-link:before {
-  transition: all .5s;
-}
-
-.navbar-nav a.nav-link {
+  // Set v-padding to 5px to align with 50/70px responsive max navbar heights.
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Calistoga';
+  font-weight: 300;
   position: relative;
+  z-index: 1030;  // For z-index clickable mobile logo.
 }
 
-.navbar-nav a.nav-link:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content: '.'; /* make invisible, dot beneath links */
-  color: transparent;
-  background: #0066a0;
-  height: 2px;
+@include media-breakpoint-down(md) {
+  // Used in conjunction with mobile .navbar-brand to center logo on mobile.
+  .navbar-brand-mobile-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  .navbar-brand {
+    // Center logo in mobile navbar.
+    margin: 0 auto;
+  }
+  .navbar-brand img {
+    max-height: 40px;  // 40px height + 10px v-padding = 50px.
+  }
+  .navbar-toggler {
+    border-color: transparent;  // Remove Bootstrap's border from Toggle button.
+  }
+  #navbar-main .main-menu-item {
+    text-align: left !important;
+    padding-left: 0;
+  }
+  .navbar-collapse {
+    z-index: 1031 !important;  // Appear just over navbar.
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    background-color: $sta-menu-primary;
+    text-align: center !important;
+  }
+  #navbar-main .main-menu-item .nav-item {
+    padding: 10px 25px !important;
+  }
+  #navbar-main .main-menu-item .nav-item .nav-link {
+    padding: 5px 25px !important;
+  }
 }
-
-.navbar-nav a.nav-link:hover:after {
-  width: 80%;
-}
-
-
-
