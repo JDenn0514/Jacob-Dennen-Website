@@ -36,8 +36,9 @@ superuser: true
 title: Jacob Dennen
 ---
 
-Bachelor degree candidate translating research data and survey results into meaningful content. Passion for increasing accessibility of information to non-academic audiences and the general public. Natural leader and collaborative team player managing projects to completion. Research focus: perceptions of Jews/antisemitism.
+Hi! Welcome to my website! A little about my website. First of all, it is still under maintenance and has not been completed yet but eventually will contain blog posts, projects, and other stuff I find interesting.
 
+About myself, my name is Jacob Dennen and I am a senior at Denison University studying political science. I am currently conducting research on antisemitism among the American Left, particularly Progressives and Liberals. Outside of school, I am on the Denison Men's Tennis Team and I am a die hard Chicago White Sox fan. 
 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/Dennen-Jacob-Resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

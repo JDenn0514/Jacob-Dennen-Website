@@ -10,7 +10,7 @@ main:
   - name: Blog posts
     url: '/post/'
     weight: 20
-  - name: Graphs
+  - name: Projects
     url: '/graphs/'
     weight: 30
   - name: Resume
