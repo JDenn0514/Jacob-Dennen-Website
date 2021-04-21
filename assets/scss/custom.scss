@@ -20,14 +20,14 @@ h1, h2, h3, h4, h5, h6 {
 a:active, 
 a:focus, 
 a:hover {
-  color: #004346;
+  color: #0066a0;
 }
 
 /* nav */
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-	color: #06805E;
+	color: #0066a0;
 }
 
 .navbar {
@@ -35,6 +35,7 @@ a:hover {
   text-transform: uppercase;
 	letter-spacing: .1em;
 	font-size: .9em;
+	font-family: 'Lora';
 }
 
 .navbar-brand {
