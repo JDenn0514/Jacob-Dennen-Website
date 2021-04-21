@@ -1,11 +1,17 @@
 ---
-date: "2016-04-27T00:00:00Z"
-external_link: http://example.org
+date: ""
+external_link: "https://dcga-m21.netlify.app/#1"
 image:
-  caption: Photo by Toa Heftiba on Unsplash
+  caption: Photo by rawpixel on Unsplash
   focal_point: Smart
-summary: An example of linking directly to an external project website using `external_link`.
+summary: A presentation using Xaringan that looks at student responses on different DCGA proposals from the Denison March 2021 survey.
 tags:
-- Demo
-title: External Project
+- DCGA
+title: "How Students Feel About DCGA Proposals"
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
 ---
+
+
